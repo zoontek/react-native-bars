@@ -108,16 +108,13 @@ To set the initial status bar style, go to **Xcode > General > Deployment Info**
 ## Usage
 
 ```tsx
-import { NavigationBar, StatusBar, SystemBars } from "react-native-bars";
+import { NavigationBar, StatusBar } from "react-native-bars";
 
 const App = () => {
   return (
     <>
       <StatusBar animated={true} barStyle="light-content" />
       <NavigationBar barStyle="light-content" />
-
-      {/* Or, to update both with one component: */}
-      <SystemBars animated={true} barStyle="light-content" />
     </>
   );
 };
@@ -212,30 +209,6 @@ NavigationBar.popStackEntry(entry/*: NavigationBarProps*/): void;
 const entry: NavigationBarProps = NavigationBar.replaceStackEntry(
   entry /*: NavigationBarProps*/,
   props /*: NavigationBarProps*/,
-);
-```
-
----
-
-### `<SystemBars />`
-
-A component to control both your app status and navigation bars.
-
-```tsx
-import { SystemBars } from "react-native-bars";
-
-type SystemBarsProps = {
-  // Should transition between bars property changes be animated? (has no effect on Android)
-  animated?: boolean;
-  // Sets the color of the bars content
-  barStyle: "light-content" | "dark-content";
-};
-
-const App = () => (
-  <>
-    <SystemBars animated={true} barStyle="dark-content" />
-    {/* … */}
-  </>
 );
 ```
 
